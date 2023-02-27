@@ -61,7 +61,7 @@ languages:
       - name: Blog
         url: posts
       - name: Profile Mode
-        url: https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode
+        url: https://github.com/hugo-PaperMod/wiki/Features#profile-mode
     menu:
       main:
       - name: Archive
@@ -155,7 +155,7 @@ params:
     url: "index.xml"
 
   editPost:
-    URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+    URL: "https://github.com/sangam14/kubedaily/"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
