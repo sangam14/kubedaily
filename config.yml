@@ -1,15 +1,19 @@
 baseURL: "https://kubedaily.com/test" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-title: PaperMod
-paginate: 5
+title: kubedaily
+paginate: 7
 theme: github.com/adityatelange/hugo-PaperMod
-
+DefaultContentLanguage: en
 enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
+pygmentsStyle: trac
+pygmentsUseClasses: true
+pygmentsCodeFences: true
 buildExpired: false
 enableEmoji: true
-pygmentsUseClasses: true
+permalinks:
+  post: ":title/"
 # googleAnalytics: UA-123-45
 
 minify:
@@ -26,75 +30,20 @@ languages:
       series: series
     menu:
       main:
-      - name: Archive
-        url: archives
+      - name: About
+        url: about
         weight: 5
+      - name: Tools
+        url: https://kubedaily.com/Kubernetes-CloudNative-Toolkits/
+        weight: 10
       - name: Search
         url: search/
-        weight: 10
+        weight: 15
       - name: Tags
         url: tags/
-        weight: 10
-      - name: WiKi
-        url: https://github.com/adityatelange/hugo-PaperMod/wiki/
-      - name: Discord
-        url: https://discord.gg/ahpmTvhVmp
-
-  fr:
-    languageName: ":fr:"
-    languageAltTitle: French
-    weight: 2
-    title: PaperModL2
-    taxonomies:
-      category: FRcategories
-      tag: FRtags
-      series: FRseries
-    profileMode:
-      enabled: true
-      title: PaperMod
-      imageUrl: "https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f317.svg"
-      imageTitle: ProfileMode image
-      # imageWidth: 120
-      # imageHeight: 120
-      subtitle: "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
-      buttons:
-      - name: Blog
-        url: posts
-      - name: Profile Mode
-        url: https://github.com/hugo-PaperMod/wiki/Features#profile-mode
-    menu:
-      main:
-      - name: Archive
-        url: archives/
-        weight: 5
-      - name: FRTags
-        url: frtags
-        weight: 10
-      - name: FRCategories
-        url: frcategories
-        weight: 10
-      - name: FRSeries
-        url: frseries
-        weight: 10
-      - name: NullLink
-        url: "#"
-
-  fa:
-    languagedirection: rtl
-    weight: 3
-    title: PaperMod RTL
-    homeInfoParams:
-      Title: "Hi there 👋"
-      Content: Welcome to RTL layout
-    taxonomies:
-      category: FAcategories
-      tag: FAtags
-      series: FAseries
-    menu:
-      main:
-      - name: FATags
-        url: fatags
-        weight: 10
+        weight: 15
+      - name: Join CloudNativeFolks Community
+        url: https://discord.gg/rEvr7vq
 
 outputs:
   home:
@@ -102,10 +51,17 @@ outputs:
   - RSS
   - JSON
 
+imaging:
+  resampleFilter: box
+  anchor: smart
+  bgColor: '#ffffff'
+  disableLatLong: true
+  exif:
+    includeFields: ''
+
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-  author: Theme PaperMod
   # author: ["Me", "You"] # multiple authors
 
   defaultTheme: auto
@@ -125,7 +81,7 @@ params:
   profileMode:
     enabled: false
     title: PaperMod
-    imageUrl: "#"
+    imageUrl: "/KubeDaily-4.png"
     imageTitle: my image
     # imageWidth: 120
     # imageHeight: 120
@@ -136,33 +92,34 @@ params:
       url: tags
 
   homeInfoParams:
-    Title: "PaperMod"
-    Content: >
-      Welcome to demo of hugo's theme PaperMod.
-
-      - **PaperMod** is a simple but fast and responsive theme with useful feature-set that enhances UX.
-
-      - Do give a 🌟 on Github !
-
-      - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper).
-
+    Title: "KubeDaily"
+    Content: "Sangam Biradar | CloudNativeFolks | Docker Community Leader | Principal Security Advocate at [Deepfence](deepfence.io) "
   socialIcons:
   - name: github
-    url: "https://github.com/adityatelange/hugo-PaperMod"
-  - name: KoFi
-    url: "https://ko-fi.com/adityatelange"
-  - name: Rss
-    url: "index.xml"
+    url: https://github.com/sangam14
+  - name: linkedin
+    url: https://www.linkedin.com/in/thechrisshort
+  - name: youtube
+    url: https://www.youtube.com/c/CloudNativeFolks
+  - name: twitter
+    url: https://twitter.com/sangamtwts
+  - name: email
+    url: mailto:kubedaily@gmail.com
+  - name: rss
+    url: https://kubedaily.com/index.xml
 
   editPost:
     URL: "https://github.com/sangam14/kubedaily/"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
-  # label:
-  #     text: "Home"
-  #     icon: icon.png
-  #     iconHeight: 35
+  label:
+    icon: /favicon-32x32.png
+    favicon16x16: /favicon-16x16.png
+    favicon32x32: /favicon-32x32.png
+    apple_touch_icon: /apple_icon.png
+
+
 
   # analytics:
   #     google:
@@ -196,11 +153,10 @@ markup:
       unsafe: true
   highlight:
     noClasses: false
-    # anchorLineNos: true
-    # codeFences: true
-    # guessSyntax: true
-    # lineNos: true
-    # style: monokai
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    style: monokai
 
 privacy:
   vimeo:
